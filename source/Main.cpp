@@ -93,6 +93,7 @@ public:
 	IfpLimitAdjusterIII() {
 		// TODO: free memory ?
 		plugin::Events::initRwEvent += []() {
+			listOfNewAnims.push_back({ CAnimManager::ms_aAnimAssocDefinitions[0].animNames[0], {} }); // 173
 			if (ReadDataFile()) {
 				// Anim limit
 				plugin::patch::SetPointer(0x4011A1 + 2, &animations);
