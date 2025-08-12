@@ -34,6 +34,7 @@ project "gta3-ifp-limit-adjuster"
 		includedirs {
 			"$(PLUGIN_SDK_DIR)/plugin_III/",
 			"$(PLUGIN_SDK_DIR)/plugin_III/game_III/",
+			"$(PLUGIN_SDK_DIR)/plugin_III/game_III/rw",
 		}
 		targetname "IfpLimitAdjusterIII"
 		debugdir "$(GTA_III_DIR)"

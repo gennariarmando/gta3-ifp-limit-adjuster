@@ -120,10 +120,10 @@ public:
 					auto old_anim = &CAnimManager::ms_aAnimAssocDefinitions[i];
 					auto new_anim = &animAssocDefinitions[i];
 
-					new_anim->groupName = new char[strlen(old_anim->groupName)];
+					new_anim->groupName = new char[strlen(old_anim->groupName) + 1];
 					strcpy(new_anim->groupName, old_anim->groupName);
 
-					new_anim->blockName = new char[strlen(old_anim->blockName)];
+					new_anim->blockName = new char[strlen(old_anim->blockName) + 1];
 					strcpy(new_anim->blockName, old_anim->blockName);
 
 					new_anim->modelIndex = old_anim->modelIndex;
@@ -137,7 +137,7 @@ public:
 						if (!new_anim->animNames)
 							new_anim->animNames = new char* [anims];
 
-						new_anim->animNames[j] = new char[strlen(old_anim->animNames[j])];
+						new_anim->animNames[j] = new char[strlen(old_anim->animNames[j]) + 1];
 						strcpy(new_anim->animNames[j], old_anim->animNames[j]);
 
 						if (!new_anim->animDescs)
@@ -152,7 +152,7 @@ public:
 				for (int32_t j = stdAnimsCount; j < newstdAnimsLimit; j++) {
 					int32_t index = j - stdAnimsCount;
 
-					animAssocDefinitions[0].animNames[j] = new char[strlen(listOfNewAnims[index].name.c_str())];
+					animAssocDefinitions[0].animNames[j] = new char[listOfNewAnims[index].name.length() + 1];
 					strcpy(animAssocDefinitions[0].animNames[j], listOfNewAnims[index].name.c_str());
 
 					animAssocDefinitions[0].animDescs[j] = listOfNewAnims[index].desc;
